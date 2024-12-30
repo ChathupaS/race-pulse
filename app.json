@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "IN3210",
-    "slug": "IN3210",
+    "name": "RacePulse",
+    "slug": "race-pulse",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "racepulse",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
