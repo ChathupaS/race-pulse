@@ -1,4 +1,12 @@
-import { View, Text, SafeAreaView, FlatList, Image } from "react-native";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  FlatList,
+  Image,
+  TouchableOpacity,
+  StyleSheet,
+} from "react-native";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { images } from "../../constants";
@@ -6,11 +14,13 @@ import SearchInput from "../../components/SearchInput";
 import { useGlobalContext } from "../../context/GlobalProvider";
 import DriverCard from "../../components/DriverCard";
 import driverImages from "../../constants/driverImages";
+import useClickStore from "../../context/useClickStore";
 
 const Home = () => {
   const [drivers, setDrivers] = useState([]);
   const [loading, setLoading] = useState(true);
   const { user } = useGlobalContext();
+  const { clickCount, increment } = useClickStore();
 
   useEffect(() => {
     const fetchDrivers = async () => {
@@ -45,18 +55,23 @@ const Home = () => {
 
   return (
     <SafeAreaView className="bg-primary h-full">
+      <View className="my-6 px-4 space-y-6">
+        <Text className="text-3xl font-bold text-white">Current Standings</Text>
+      </View>
       <FlatList
         data={drivers}
         keyExtractor={(item) => item.Driver.driverId}
         renderItem={({ item }) => (
-          <DriverCard
-            position={item.position}
-            givenName={item.Driver.givenName}
-            familyName={item.Driver.familyName}
-            points={item.points}
-            wins={item.wins}
-            imageUrl={getDriverImageUrl(item.Driver.driverId)}
-          />
+          <TouchableOpacity onPress={increment}>
+            <DriverCard
+              position={item.position}
+              givenName={item.Driver.givenName}
+              familyName={item.Driver.familyName}
+              points={item.points}
+              wins={item.wins}
+              imageUrl={getDriverImageUrl(item.Driver.driverId)}
+            />
+          </TouchableOpacity>
         )}
         ListHeaderComponent={() => (
           <View className="my-6 px-4 space-y-6">
@@ -81,8 +96,35 @@ const Home = () => {
           </View>
         )}
       />
+      <TouchableOpacity style={styles.floatingButton}>
+        <Text style={styles.buttonText}>{clickCount}</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  floatingButton: {
+    position: "absolute",
+    bottom: 20,
+    right: 20,
+    backgroundColor: "#6200EE",
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    justifyContent: "center",
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    elevation: 5,
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+});
 
 export default Home;
