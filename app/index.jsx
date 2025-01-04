@@ -6,9 +6,12 @@ import { StatusBar } from "expo-status-bar";
 import { images } from "../constants";
 import { Redirect, router } from "expo-router";
 import CustomButton from "../components/CustomButton";
+import { useGlobalContext } from "../context/GlobalProvider";
 import "../global.css";
 
 const Index = () => {
+  const { loading, isLogged } = useGlobalContext();
+  if (!loading && isLogged) return <Redirect href="/home" />;
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <SafeAreaView className="bg-primary h-full">
