@@ -1,0 +1,48 @@
+export default {
+  max_verstappen:
+    "https://media.formula1.com/image/upload/v1712849101/content/dam/fom-website/drivers/2024Drivers/verstappen.png",
+  norris:
+    "https://media.formula1.com/image/upload/f_auto,c_limit,q_75,w_1320/content/dam/fom-website/drivers/2024Drivers/norris",
+  leclerc:
+    "https://media.formula1.com/image/upload/v1712849101/content/dam/fom-website/drivers/2024Drivers/leclerc.png",
+  piastri:
+    "https://media.formula1.com/image/upload/v1712849101/content/dam/fom-website/drivers/2024Drivers/piastri.png",
+  sainz:
+    "https://media.formula1.com/image/upload/v1712849101/content/dam/fom-website/drivers/2024Drivers/sainz.png",
+  russell:
+    "https://media.formula1.com/image/upload/v1712849101/content/dam/fom-website/drivers/2024Drivers/russell.png",
+  hamilton:
+    "https://media.formula1.com/image/upload/v1712849101/content/dam/fom-website/drivers/2024Drivers/hamilton.png",
+  perez:
+    "https://media.formula1.com/image/upload/v1712849101/content/dam/fom-website/drivers/2024Drivers/perez.png",
+  alonso:
+    "https://media.formula1.com/image/upload/v1712849101/content/dam/fom-website/drivers/2024Drivers/alonso.png",
+  gasly:
+    "https://media.formula1.com/image/upload/v1712849101/content/dam/fom-website/drivers/2024Drivers/gasly.png",
+  hulkenberg:
+    "https://media.formula1.com/image/upload/v1712849101/content/dam/fom-website/drivers/2024Drivers/hulkenberg.png",
+  tsunoda:
+    "https://media.formula1.com/image/upload/v1712849101/content/dam/fom-website/drivers/2024Drivers/tsunoda.png",
+  stroll:
+    "https://media.formula1.com/image/upload/v1712849101/content/dam/fom-website/drivers/2024Drivers/stroll.png",
+  ocon: "https://media.formula1.com/image/upload/v1712849101/content/dam/fom-website/drivers/2024Drivers/ocon.png",
+  kevin_magnussen:
+    "https://media.formula1.com/image/upload/v1712849101/content/dam/fom-website/drivers/2024Drivers/magnussen.png",
+  albon:
+    "https://media.formula1.com/image/upload/v1712849101/content/dam/fom-website/drivers/2024Drivers/albon.png",
+  ricciardo:
+    "https://media.formula1.com/image/upload/v1712849101/content/dam/fom-website/drivers/2024Drivers/ricciardo.png",
+  bearman:
+    "https://media.formula1.com/image/upload/v1712849101/content/dam/fom-website/drivers/2024Drivers/bearman.png",
+  colapinto:
+    "https://media.formula1.com/image/upload/v1712849101/content/dam/fom-website/drivers/2024Drivers/colapinto.png",
+  zhou: "https://media.formula1.com/image/upload/v1712849101/content/dam/fom-website/drivers/2024Drivers/zhou.png",
+  lawson:
+    "https://media.formula1.com/image/upload/v1712849101/content/dam/fom-website/drivers/2024Drivers/lawson.png",
+  bottas:
+    "https://media.formula1.com/image/upload/v1712849101/content/dam/fom-website/drivers/2024Drivers/bottas.png",
+  sargeant:
+    "https://media.formula1.com/image/upload/v1712849101/content/dam/fom-website/drivers/2024Drivers/sargeant.png",
+  doohan:
+    "https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/fom-website/drivers/2024Drivers/doohan.png",
+};

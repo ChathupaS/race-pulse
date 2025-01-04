@@ -4,10 +4,14 @@ import axios from "axios";
 import { images } from "../../constants";
 import SearchInput from "../../components/SearchInput";
 import { useGlobalContext } from "../../context/GlobalProvider";
+import DriverCard from "../../components/DriverCard";
+import driverImages from "../../constants/driverImages";
+
 const Home = () => {
   const [drivers, setDrivers] = useState([]);
   const [loading, setLoading] = useState(true);
   const { user } = useGlobalContext();
+
   useEffect(() => {
     const fetchDrivers = async () => {
       try {
@@ -35,19 +39,24 @@ const Home = () => {
     );
   }
 
+  const getDriverImageUrl = (driverId) => {
+    return driverImages[driverId] || "https://example.com/images/default.jpg";
+  };
+
   return (
     <SafeAreaView className="bg-primary h-full">
       <FlatList
         data={drivers}
         keyExtractor={(item) => item.Driver.driverId}
         renderItem={({ item }) => (
-          <View className="p-4 border-b border-gray-200">
-            <Text className="text-3xl text-white">
-              {item.position}. {item.Driver.givenName} {item.Driver.familyName}
-            </Text>
-            <Text className="text-lg text-gray-400">Points: {item.points}</Text>
-            <Text className="text-lg text-gray-400">Wins: {item.wins}</Text>
-          </View>
+          <DriverCard
+            position={item.position}
+            givenName={item.Driver.givenName}
+            familyName={item.Driver.familyName}
+            points={item.points}
+            wins={item.wins}
+            imageUrl={getDriverImageUrl(item.Driver.driverId)}
+          />
         )}
         ListHeaderComponent={() => (
           <View className="my-6 px-4 space-y-6">
@@ -57,7 +66,7 @@ const Home = () => {
                   Welcome Back
                 </Text>
                 <Text className="text-2xl font-psemibold text-white">
-                  {user.username}
+                  {user?.username}
                 </Text>
               </View>
               <View className="mt-1.5">
