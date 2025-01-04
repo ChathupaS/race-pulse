@@ -3,11 +3,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { images } from "../../constants";
 import SearchInput from "../../components/SearchInput";
-
+import { useGlobalContext } from "../../context/GlobalProvider";
 const Home = () => {
   const [drivers, setDrivers] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const { user } = useGlobalContext();
   useEffect(() => {
     const fetchDrivers = async () => {
       try {
@@ -57,7 +57,7 @@ const Home = () => {
                   Welcome Back
                 </Text>
                 <Text className="text-2xl font-psemibold text-white">
-                  Chathupa
+                  {user.username}
                 </Text>
               </View>
               <View className="mt-1.5">
