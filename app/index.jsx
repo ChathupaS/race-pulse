@@ -41,8 +41,8 @@ const Index = () => {
             </View>
 
             <Text className="text-sm font-pregular text-gray-100 mt-7 text-center">
-              Where Creativity meets innovation: embark on a journey of
-              limitless exploration with Aora{" "}
+              Experience the thrill of F1, where speed, precision, and passion
+              ignite every moment with RacePulse!{" "}
             </Text>
             <CustomButton
               title="Continue with Email"
